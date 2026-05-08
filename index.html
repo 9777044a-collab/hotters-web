@@ -3,35 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로컬 디터스 (Local Diters) | 동네 최저가의 모든 것</title>
-    <meta name="description" content="우리 동네 최저가 정보를 AI로 검색하고 제보하는 가장 스마트한 방법, 로컬 디터스">
+    <title>로컬 디터스 (Local Diters) | 올리비아</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
     <style>
-        :root { --primary: #FF3B3B; --bg: #0A0A0A; --card: #1A1A1A; --text: #FFFFFF; --text-dim: #A0A0A0; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        :root { --primary: #FF3B3B; --bg: #050505; --card-bg: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08); --text: #FFFFFF; --text-dim: #999999; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; -webkit-font-smoothing: antialiased; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #251010 0%, #0A0A0A 100%); padding: 20px; }
-        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; background: linear-gradient(to right, #FFFFFF, #FF3B3B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.5rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
-        .btn { padding: 18px 40px; background-color: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 20px rgba(255, 59, 59, 0.3); }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 59, 59, 0.5); }
-        .features { padding: 100px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .feature-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05); }
-        .feature-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
-        .feature-card p { color: var(--text-dim); }
-        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); font-size: 0.9rem; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at top right, #1a0a0a 0%, #050505 100%); padding: 20px; }
+        .badge { background: var(--card-bg); border: 1px solid var(--border); padding: 8px 16px; border-radius: 100px; font-size: 0.9rem; color: var(--primary); margin-bottom: 24px; backdrop-filter: blur(10px); }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; letter-spacing: -2px; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(180deg, #FFFFFF 0%, #777777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: clamp(1rem, 3vw, 1.4rem); color: var(--text-dim); max-width: 700px; margin-bottom: 48px; }
+        .btn-main { padding: 20px 48px; background: linear-gradient(135deg, #FF3B3B 0%, #CC0000 100%); color: white; text-decoration: none; border-radius: 16px; font-weight: 700; font-size: 1.1rem; box-shadow: 0 20px 40px rgba(255, 59, 59, 0.2); transition: all 0.4s ease; }
+        .btn-main:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(255, 59, 59, 0.4); }
+        .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 24px 100px; }
+        .card { background: var(--card-bg); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 32px; padding: 48px; transition: all 0.3s; }
+        .card:hover { border-color: rgba(255, 59, 59, 0.3); background: rgba(255, 255, 255, 0.05); }
+        .card-lg { grid-column: span 8; } .card-sm { grid-column: span 4; }
+        .icon { width: 56px; height: 56px; background: rgba(255, 59, 59, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px; color: var(--primary); font-size: 1.5rem; }
+        .card h3 { font-size: 2rem; margin-bottom: 16px; font-weight: 700; }
+        .card p { color: var(--text-dim); font-size: 1.1rem; }
+        footer { background: #000; padding: 80px 24px; border-top: 1px solid var(--border); }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; }
+        .contact-link { color: var(--primary); text-decoration: none; font-weight: 600; }
+        @media (max-width: 900px) { .card-lg, .card-sm { grid-column: span 12; } }
     </style>
 </head>
 <body>
     <section class="hero">
+        <div class="badge">Next Generation Price Tracker</div>
         <h1>Local Diters</h1>
-        <p>우리 동네 최저가 정보를 AI로 검색하고 제보하는<br>가장 스마트한 방법</p>
-        <a href="https://github.com/ditersolivia-alt/hotters" class="btn">GitHub에서 확인하기</a>
+        <p>인공지능이 찾아주는 우리 동네 진짜 최저가.<br>이제 발품 팔지 마세요. 로컬 디터스가 해결해 드립니다.</p>
+        <a href="#features" class="btn-main">서비스 상세 기능보기</a>
     </section>
-    <section class="features">
-        <div class="feature-card"><h3>📍 실시간 카카오 지도</h3><p>내 주변의 모든 할인 매장과 최저가 제보 위치를 카카오 지도로 한눈에 확인하세요.</p></div>
-        <div class="feature-card"><h3>🤖 AI 가격 분석</h3><p>사진 한 장만 찍으면 AI가 자동으로 품목과 가격을 인식하여 최저가 여부를 판단합니다.</p></div>
-        <div class="feature-card"><h3>💬 스마트 커뮤니티</h3><p>동네 주민들과 실시간으로 할인 정보를 공유하고 카카오톡으로 즉시 알리세요.</p></div>
-    </section>
-    <footer>&copy; 2026 Local Diters (로컬 디터스). All rights reserved.</footer>
+    <div id="features" class="grid" style="margin-top: 100px;">
+        <div class="card card-lg">
+            <div class="icon">📍</div>
+            <h3>실시간 주변 최저가 지도</h3>
+            <p>내 위치를 중심으로 가장 가까운 최저가 업소를 즉시 찾아드립니다. 카카오 로컬 API 연동으로 정확한 거리와 경로를 안내하며, 실시간 가격 변동 정보를 지도로 파악하세요.</p>
+        </div>
+        <div class="card card-sm">
+            <div class="icon">🤖</div>
+            <h3>AI 스캔 & 분석</h3>
+            <p>영수증이나 가격표 사진 한 장만 찍으세요. AI가 품목, 용량, 단가를 자동 추출하여 최저가 여부를 실시간으로 분석합니다.</p>
+        </div>
+        <div class="card card-sm">
+            <div class="icon">🔔</div>
+            <h3>스마트 알림</h3>
+            <p>관심 품목 가격이 설정해둔 하한가 이하로 떨어지면 즉시 푸시 알림을 보내 타이밍을 놓치지 않게 도와드립니다.</p>
+        </div>
+        <div class="card card-lg">
+            <div class="icon">🎁</div>
+            <h3>제보하고 보상받는 커뮤니티</h3>
+            <p>직접 찾은 최저가 정보를 이웃과 공유하세요. 검증된 제보를 할 때마다 포인트가 쌓이며, 동네 상권과 상생하는 소비 생태계를 함께 만들어갑니다.</p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4 style="font-size: 1.5rem; margin-bottom: 8px;">올리비아 (Olivia)</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">동네 경제의 새로운 가치를 창출하는 혁신 그룹</p>
+                <p style="color: var(--text-dim); font-size: 0.8rem; margin-top: 16px;">© 2026 Olivia Project. All rights reserved.</p>
+            </div>
+            <div style="text-align: right;">
+                <p style="color: var(--text-dim); margin-bottom: 8px;">Support & Inquiry</p>
+                <a href="mailto:diters2025@gmail.com" class="contact-link">diters2025@gmail.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
