@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬 디터스 (Local Diters) | 동네 최저가의 모든 것</title>
+    <meta name="description" content="우리 동네 최저가 정보를 AI로 검색하고 제보하는 가장 스마트한 방법, 로컬 디터스">
+    <style>
+        :root { --primary: #FF3B3B; --bg: #0A0A0A; --card: #1A1A1A; --text: #FFFFFF; --text-dim: #A0A0A0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Pretendard', sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle at center, #251010 0%, #0A0A0A 100%); padding: 20px; }
+        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 20px; background: linear-gradient(to right, #FFFFFF, #FF3B3B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.5rem; color: var(--text-dim); max-width: 600px; margin-bottom: 40px; }
+        .btn { padding: 18px 40px; background-color: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 20px rgba(255, 59, 59, 0.3); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255, 59, 59, 0.5); }
+        .features { padding: 100px 20px; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .feature-card { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.05); }
+        .feature-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: var(--primary); }
+        .feature-card p { color: var(--text-dim); }
+        footer { padding: 60px 20px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Local Diters</h1>
+        <p>우리 동네 최저가 정보를 AI로 검색하고 제보하는<br>가장 스마트한 방법</p>
+        <a href="https://github.com/ditersolivia-alt/hotters" class="btn">GitHub에서 확인하기</a>
+    </section>
+    <section class="features">
+        <div class="feature-card"><h3>📍 실시간 카카오 지도</h3><p>내 주변의 모든 할인 매장과 최저가 제보 위치를 카카오 지도로 한눈에 확인하세요.</p></div>
+        <div class="feature-card"><h3>🤖 AI 가격 분석</h3><p>사진 한 장만 찍으면 AI가 자동으로 품목과 가격을 인식하여 최저가 여부를 판단합니다.</p></div>
+        <div class="feature-card"><h3>💬 스마트 커뮤니티</h3><p>동네 주민들과 실시간으로 할인 정보를 공유하고 카카오톡으로 즉시 알리세요.</p></div>
+    </section>
+    <footer>&copy; 2026 Local Diters (로컬 디터스). All rights reserved.</footer>
+</body>
+</html>
